@@ -17,6 +17,8 @@ Github源代码目录结构
 
 >*/src/app/Android/* ：存放客户端安卓源代码目录
 
+>*/src/sdk/* :存放客户端SDK源代码目录
+
 /src/server/ ：存放服务端源代码目录
 
 >*/src/server/portal/* ：存放服务端门户源代码目录
