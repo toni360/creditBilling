@@ -1,0 +1,27 @@
+<resources>
+
+    <color name="white">#FFFFFF</color>
+    <color name="menu_item_text_color">#E60200</color>
+    <!-- 拷贝布局文件 -->
+    <color name="background_color">#fff2f2f2</color>
+    <color name="dark_color">#ff808080</color>
+    <color name="my_textcolor_bg">#ffffffff</color>
+    <color name="my_split_top">#ffdfdfdf</color>
+    <color name="my_split_bottom">#66bcbcbc</color>
+    <color name="my_textcolor">#ff391527</color>
+
+    <!-- 自定义的 -->
+    <color name="selector_pressed_back">#66C0C0C0</color>
+    <color name="selector_def_back">#FFFFFF</color>
+
+    <!-- 美工给的参数 -->
+
+    <color name="color_et_hint">#CACACA</color>
+    <color name="color_tv_left">#333333</color>
+    <color name="color_bt">#EA7914</color>
+    <color name="color_desc">#a9a9a9</color>
+    <color name="color_momey">#FF6600</color>
+    <color name="color_momey_success">#009900</color>
+    <!-- <color name="half_black">#e0000000</color> -->
+
+</resources>
