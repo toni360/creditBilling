@@ -54,6 +54,9 @@ public class PayController implements Pay {
 	public static ResponseCallback responseCallback;
 	private com.wi360.pay.sdk.bean.PayOrderBean.Pay payBean;
 
+	public static String appId;
+	public static String appKey;
+
 	public PayController(Activity context, final Dialog dialog, View view) {
 		this.context = context;
 		this.dialog = dialog;
@@ -177,7 +180,7 @@ public class PayController implements Pay {
 	}
 
 	@Override
-	public void creditPay(String productName, int sum, String alias, String sellerUserId,
+	public void creditPay(String appId, String appkey, String productName, int sum, String alias, String sellerUserId,
 			ResponseCallback responseCallback) {
 		// 检测是否在UI线程中调用该接口
 		if (!CommonUtil.checkUiThread()) {
@@ -188,6 +191,17 @@ public class PayController implements Pay {
 			}
 			return;
 		}
+		if (StringUtils.isEmpty(appId) || StringUtils.isEmpty(appkey)) {
+			try {
+				throw new Exception("请填写appId或appKey");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return;
+		}
+		this.appId = appId;
+		this.appKey = appkey;
+
 		this.responseCallback = responseCallback;
 		// User2 user = DBUtils.getUser(context);
 		String token = SharedPreferencesUtils.getString(context, Constants.token, "");
@@ -316,10 +330,20 @@ public class PayController implements Pay {
 	}
 
 	@Override
-	public void isBalanceDue(final BalanceDueCallback balanceDueCallback) {
+	public void isBalanceDue(String appId, String appKey, final BalanceDueCallback balanceDueCallback) {
 		if (balanceDueCallback == null) {
 			throw new RuntimeException("balanceDueCallback 不能等于null");
 		}
+		if (StringUtils.isEmpty(appId) || StringUtils.isEmpty(appKey)) {
+			try {
+				throw new Exception("请填写appId或appKey");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return;
+		}
+		this.appId = appId;
+		this.appKey = appKey;
 		Log.i(TAG, "isBalanceDue");
 		String token = SharedPreferencesUtils.getString(context, Constants.token, "");
 		if (StringUtils.isEmpty(token)) {

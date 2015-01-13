@@ -47,7 +47,7 @@ public class RechargePayController {
 	private Handler handler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
 			com.wi360.pay.sdk.interfaces.Pay payIn = PayFactory.getInstance(context);
-			payIn.creditPay(payBean.productName, payBean.sum, payBean.alias, payBean.sellerUserId,
+			payIn.creditPay(PayController.appId,PayController.appKey,payBean.productName, payBean.sum, payBean.alias, payBean.sellerUserId,
 					PayController.responseCallback);
 		};
 	};

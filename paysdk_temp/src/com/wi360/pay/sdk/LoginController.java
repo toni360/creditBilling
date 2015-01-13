@@ -183,7 +183,8 @@ public class LoginController {
 				if (resBean != null && resBean.errcode == 0) {
 					// 登陆成功后跳转到,跳转到支付页面
 					com.wi360.pay.sdk.interfaces.Pay payin = PayFactory.getInstance(context);
-					payin.creditPay(pay.productName, pay.sum, pay.alias, pay.sellerUserId, responseCallback);
+					payin.creditPay(PayController.appId, PayController.appKey, pay.productName, pay.sum, pay.alias,
+							pay.sellerUserId, responseCallback);
 				}
 			};
 		}.execute(new String[] { Constants.LOGIN_URL, json });

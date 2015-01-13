@@ -126,8 +126,6 @@ public final class R {
 	public static final class string {
 		public static final int action_settings = 0x7f060001;
 		public static final int appCode = 0x7f060003;
-		public static final int appId = 0x7f060005;
-		public static final int appKey = 0x7f060004;
 		public static final int app_name = 0x7f060000;
 		public static final int hello_world = 0x7f060002;
 	}

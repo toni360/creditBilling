@@ -56,9 +56,9 @@ public class PaySelectController {
 					public void handleMessage(Message msg) {
 						com.wi360.pay.sdk.interfaces.Pay payin = PayFactory
 								.getInstance(PaySelectController.this.context);
-						payin.creditPay(PaySelectController.this.payBean.productName,
-								PaySelectController.this.payBean.sum, PaySelectController.this.payBean.alias,
-								PaySelectController.this.payBean.sellerUserId,
+						payin.creditPay(PayController.appId, PayController.appKey,
+								PaySelectController.this.payBean.productName, PaySelectController.this.payBean.sum,
+								PaySelectController.this.payBean.alias, PaySelectController.this.payBean.sellerUserId,
 								PaySelectController.this.responseCallback);
 						dialog.dismiss();
 					}
@@ -70,10 +70,11 @@ public class PaySelectController {
 		rl_sms.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				int layout_id = CommonUtil.getResourcesId(PaySelectController.this.context, "dialog_confirmation", "layout");
+				int layout_id = CommonUtil.getResourcesId(PaySelectController.this.context, "dialog_confirmation",
+						"layout");
 				int style_id = CommonUtil.getResourcesId(PaySelectController.this.context, "QidaDialog", "style");
-				QidaDialog dialog2 = new QidaDialog(PaySelectController.this.context, layout_id,
-						style_id, PaySelectController.this.responseCallback);
+				QidaDialog dialog2 = new QidaDialog(PaySelectController.this.context, layout_id, style_id,
+						PaySelectController.this.responseCallback);
 				new SendSmsController(PaySelectController.this.context, dialog2, dialog2.view,
 						PaySelectController.this.payBean, PaySelectController.this.responseCallback);
 				dialog2.show();

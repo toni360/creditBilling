@@ -15,12 +15,13 @@ public class IsBalanceDueSafeBean extends BaseBean {
 	public IsBalanceDueSafeBean(Context context) {
 		// this.appId = getAppId(context);
 		// this.appId = "GM01";
-		this.appId = "zjhtwallet";
+		// this.appId = "zjhtwallet";
+		this.appId = getAppId(context);
 		this.timeStamp = System.currentTimeMillis() + "";
 		this.nonce = genRandNum(12) + "";
 		this.token = getToken(context);
-		String appkey = "wcMZS2ltxNcrtesPmm9uRdL0cU8=";
-		this.signature = getMD5Str(appId + appkey + nonce + timeStamp + token);
+		// String appkey = "wcMZS2ltxNcrtesPmm9uRdL0cU8=";
+		this.signature = getMD5Str(appId + getAppKey(context) + nonce + timeStamp + token);
 		this.mobileNum = getMobileNum(context);
 	}
 }

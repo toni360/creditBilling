@@ -13,6 +13,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.util.Base64;
 import android.util.Log;
 
+import com.wi360.pay.sdk.PayController;
 import com.wi360.pay.sdk.R;
 import com.wi360.pay.sdk.util.CommonUtil;
 import com.wi360.pay.sdk.util.Constants;
@@ -39,18 +40,22 @@ public class BaseBean implements Serializable {
 	protected String getToken(Context context) {
 		return SharedPreferencesUtils.getString(context, Constants.token, "");
 	}
+
 	protected String getMobileNum(Context context) {
 		return SharedPreferencesUtils.getString(context, Constants.mobileNum, "");
 	}
 
 	protected String getAppKey(Context context) {
-		int string_id = CommonUtil.getResourcesId(context, "appKey", "string");
-		return context.getResources().getString(string_id);
+		// int string_id = CommonUtil.getResourcesId(context, "appKey",
+		// "string");
+		// return context.getResources().getString(string_id);
+		return PayController.appKey;
 	}
 
 	protected String getAppId(Context context) {
-		int id = CommonUtil.getResourcesId(context, "appId", "string");
-		return context.getResources().getString(id);
+		// int id = CommonUtil.getResourcesId(context, "appId", "string");
+		// return context.getResources().getString(id);
+		return PayController.appId;
 	}
 
 	/**

@@ -6,7 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <!--  -->
     <string name="appCode">zjhtwallet</string>
-    <string name="appKey">test01</string>
-    <string name="appId">test01</string>
+<!--     <string name="appKey">test01</string>
+    <string name="appId">test01</string> -->
 
 </resources>

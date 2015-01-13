@@ -108,7 +108,7 @@ public class MainActivity extends Activity {
 		Log.i(TAG, "isBalanceDue");
 		// Pay pay = PayFactory.getInstance(this);
 		Pay pay = PayFactory.getInstance(this);
-		pay.isBalanceDue(new BalanceDueCallback() {
+		pay.isBalanceDue("zjhtwallet", "wcMZS2ltxNcrtesPmm9uRdL0cU8=",new BalanceDueCallback() {
 			@Override
 			public void notifyBalanceDueMomey(int momey) {
 
@@ -124,7 +124,8 @@ public class MainActivity extends Activity {
 		// dialog.show();
 		// PayController pay = new PayController(this, dialog, dialog.view);
 		Pay pay = PayFactory.getInstance(this);
-		pay.creditPay("商品名称", momey, "360market", "uc-zhangsan", new ResponseCallback() {
+		// pay.creditPay(arg0, arg1, arg2, arg3, arg4);
+		pay.creditPay("zjhtwallet", "wcMZS2ltxNcrtesPmm9uRdL0cU8=", "商品名称", momey, "360market", "uc-zhangsan", new ResponseCallback() {
 			@Override
 			public void responseStateCode(int code) {
 				UIUtils.showToast(MainActivity.this, code + "");

@@ -126,8 +126,6 @@ int layout toast_showaddress 0x7f03000c
 int menu main 0x7f080000
 int string action_settings 0x7f060001
 int string appCode 0x7f060003
-int string appId 0x7f060005
-int string appKey 0x7f060004
 int string app_name 0x7f060000
 int string hello_world 0x7f060002
 int style AppBaseTheme 0x7f070000

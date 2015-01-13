@@ -148,8 +148,6 @@ public final class R {
         /**   
          */
         public static int appCode=0x7f060003;
-        public static int appId=0x7f060005;
-        public static int appKey=0x7f060004;
         public static int app_name=0x7f060000;
         public static int hello_world=0x7f060002;
     }
